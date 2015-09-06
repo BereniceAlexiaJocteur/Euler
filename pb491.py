@@ -24,16 +24,15 @@ class Problem():
 
     def get_number_permutations(self, candi):
         result = 1
+        temp = 1
+        diff = len(candi) - len(set(candi))
         if candi.count(0) == 0:
-            diff = len(candi) - len(set(candi))
             for i in range(diff):
                 result *= self.combi[-1-2*i]
             result *= self.fact[10-diff*2]
             result **= 2
             return result
         elif candi.count(0) == 1:
-            temp = 1
-            diff = len(candi) - len(set(candi))
             result *= self.combi[0]
             for i in range(diff):
                 result *= self.combi[-2*(i+1)]
@@ -44,8 +43,6 @@ class Problem():
             result *= temp
             return result
         else:
-            temp = 1
-            diff = len(candi) - len(set(candi))
             result *= self.combi[-2]
             for i in range(diff-1):
                 result *= self.combi[-3-2*i]
