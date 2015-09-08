@@ -9,6 +9,7 @@ import sys
 
 
 class Problem():
+
     def __init__(self, n):
         self.n = n
         self.matrix = None
