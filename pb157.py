@@ -12,6 +12,7 @@ import sys
 
 
 class Problem():
+
     def __init__(self, n):
         self.lim = n
         self.pwrs2 = [2 ** k for k in range(int(math.log(2 * 10 ** self.lim, 2)) + 1)]
