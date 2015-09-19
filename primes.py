@@ -34,6 +34,7 @@ def primes(n):
             ps.append(p)
         i += 1
         p += 2
+    del b
     return ps
 
 
@@ -262,3 +263,46 @@ def is_prime_opti(n):
 
 def upper_bound_prime(n):
     return int(n * (math.log(n) + math.log(math.log(n))))
+
+
+def sieve_seg(N):
+    n = int(N**0.5)
+    p = list(range(n+1))
+    for j in range(2, n+1):
+        if p[j]:
+            for k in range(j**2, n+1, j):
+                    p[k] = False
+    P = [l for l in p[2:] if l]
+    m = 1
+    while (m+1)*n < N:
+        u = (m+1)*n+1
+        p = list(range(m*n+1, u))
+        for x in P:
+            v = x*((m*n)//x+1)
+            if v > u:
+                break
+            for y in range(v, u, x):
+                p[y-m*n-1] = False
+        for j in range(len(p)):
+            if p[j]:
+                if p[j] > n**0.5+m*n+1:
+                    break
+                for k in range(p[j]**2, p[-1]+1, p[j]):
+                    p[k] = False
+        P += [l for l in p if l]
+        m += 1
+    p = list(range(m*n+1, N+1))
+    for x in P:
+        v = x*((m*n)//x+1)
+        if v > N and v/x*(x-1) > m*n+1:
+            v = v//x*(x-1)
+        for y in range(v, N+1, x):
+            p[y-m*n-1] = False
+    for j in range(len(p)):
+            if p[j]:
+                if p[j] > n**0.5+m*n+1:
+                    break
+                for k in range(p[j]**2, p[-1]+1, p[j]):
+                    p[k] = False
+    P += [l for l in p if l]
+    return P
