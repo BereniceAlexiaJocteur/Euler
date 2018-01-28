@@ -103,7 +103,7 @@ def some(seq):
 
 
 def solved(values):
-    """A puzzle is solved if each unit is a permutation of the digits 1 to 9."""
+    """A puzzle is solved  if each unit is a permutation of the digits 1 to 9."""
     def unitsolved(unit):
         return set(values[s] for s in unit) == set(digits)
     return values is not False and all(unitsolved(unit) for unit in unitlist)
