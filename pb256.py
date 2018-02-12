@@ -67,4 +67,4 @@ while test:
         res = i
         test = False
 print(res)
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')

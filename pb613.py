@@ -20,5 +20,5 @@ def sol():
 
 start = time.perf_counter()
 print(round(sol(), 10))
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')
 

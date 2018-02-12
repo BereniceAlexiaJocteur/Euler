@@ -21,7 +21,7 @@ def fonction(a, b, n):
 def main():
     start = time.perf_counter()
     print(fonction(0, 0, 0))
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

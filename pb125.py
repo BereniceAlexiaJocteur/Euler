@@ -21,4 +21,4 @@ for i in range(1, limit+1):
             sum += number
             liste.append(number)
 print(sum)
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')

@@ -29,7 +29,7 @@ def main():
     resultat = binomial(110, 10) + binomial(109, 9) - 1002
 
     print(resultat)
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

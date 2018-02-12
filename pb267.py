@@ -17,7 +17,7 @@ def main():
         res += eulerfun.binomial(1000, i)
 
     print(round((1-res/2**1000), 12))
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

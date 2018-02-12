@@ -10,4 +10,4 @@ for i in range(1, 250002):
         else:
             break
 print(total)
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')

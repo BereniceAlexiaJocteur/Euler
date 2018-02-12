@@ -21,7 +21,7 @@ def main():
     reps2 = {'CCCC': 'CD', 'XXXX': 'XL', 'IIII': 'IV'}
     new = replace_all(replace_all(a, reps1), reps2)
     print(len(a) - len(new))
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

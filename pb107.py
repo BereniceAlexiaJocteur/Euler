@@ -204,7 +204,7 @@ def main():
         finalcost += cost1[u1]
 
     print(initialcost - finalcost)
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 
 if __name__ == '__main__':

@@ -648,7 +648,7 @@ def main():
     graphe['79-0'] = {'79-1': matrix[79][1], '78-0': matrix[78][0]}
 
     print(shortest_path(graphe, 'source', '79-79'))
-    print('temps d execution', time.perf_counter() - start1, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start1, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

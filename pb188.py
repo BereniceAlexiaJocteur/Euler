@@ -19,7 +19,7 @@ def probleme(a, b, m):
 def main():
     startt = time.perf_counter()
     print(probleme(1777, 1855, 10**8))
-    print('temps d execution', time.perf_counter() - startt, 'sec')
+    print('temps d\'exécution', time.perf_counter() - startt, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

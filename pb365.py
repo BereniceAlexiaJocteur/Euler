@@ -85,7 +85,7 @@ def main():
                 resultat += chinese_remainder(nc2, ac2)[1]
 
     print(resultat-20)
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

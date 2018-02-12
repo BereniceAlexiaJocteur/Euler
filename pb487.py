@@ -48,7 +48,7 @@ def main():
     start = time.perf_counter()
     u = Problem(10**8, 10**5)
     u.solve()
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

@@ -71,4 +71,4 @@ decryption = []
 for n in range(0, len(cipher)):
     decryption += [cipher[n] ^ ord(key[n % 3])]
 print(sum(decryption))
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')

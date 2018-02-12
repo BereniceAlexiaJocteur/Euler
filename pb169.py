@@ -23,7 +23,7 @@ def a(n):
 def main():
     start = time.perf_counter()
     print(a(10**25+1))
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

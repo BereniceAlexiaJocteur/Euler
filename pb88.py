@@ -40,7 +40,7 @@ def main():
         b.add(a[k])
 
     print(sum(i for i in b))
-    print('temps d execution', time.perf_counter() - startt, 'sec')
+    print('temps d\'exécution', time.perf_counter() - startt, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

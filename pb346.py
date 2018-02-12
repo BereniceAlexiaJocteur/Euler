@@ -20,4 +20,4 @@ def solve(n):
 
 start = time.perf_counter()
 print(solve(10**12))
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')

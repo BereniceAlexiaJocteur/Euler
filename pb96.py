@@ -126,4 +126,4 @@ for j in mylist:
     solulu = int(solu['A1']+solu['A2']+solu['A3'])
     somme += solulu
 print(somme)
-print('temps d execution', time.perf_counter() - start, 'sec')
+print('temps d\'exécution', time.perf_counter() - start, 'sec')

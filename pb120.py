@@ -16,7 +16,7 @@ def main():
         s += 2 * a * ((a - 1) // 2)
 
     print(s)
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())

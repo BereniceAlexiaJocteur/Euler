@@ -23,7 +23,7 @@ def main():
             t = [(t[k] + t[(k-i)]) % 10**16 for k in range(m)]
 
     print(t[0]-1)
-    print('temps d execution', time.perf_counter() - start, 'sec')
+    print('temps d\'exécution', time.perf_counter() - start, 'sec')
 
 if __name__ == '__main__':
     sys.exit(main())
