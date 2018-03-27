@@ -1,6 +1,8 @@
 import time
+import numba
 
 
+@numba.jit(nopython=True)
 def solve(n):
     set_of_repunits = {1}
     base = 2

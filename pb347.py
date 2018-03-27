@@ -1,5 +1,6 @@
 import time
 import math
+import numba
 
 
 def init_prime(n):
@@ -15,6 +16,7 @@ def init_prime(n):
     return prime
 
 
+@numba.jit(nopython=True)
 def m(p, q, n):
     curr_max = 0
     i = 1
