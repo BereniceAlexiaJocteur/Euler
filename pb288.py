@@ -16,30 +16,30 @@ class Problem():
         self.mod1 = 50515093
         self.mod2 = 61**10
         self.sn = [290797]
-        self.n = 0
         self.res = 0
 
     def get_sn(self):
         for n in range(self.q):
             self.sn.append(self.sn[n]**2 % self.mod1)
 
-    def get_n(self):
-        for n in range(self.q+1):
-            tn = self.sn[n] % self.p
-            self.n += tn*self.p**n
+    def number_of_factor_p_in_factorial_n(self, n):
+        div = self.p
+        number_of_factors = 0
+        curr = n//div
+        while curr > 0:
+            number_of_factors += curr
+            div *= self.p
+            curr = n//div
+        return number_of_factors
 
     def get_res(self):
-        i = 1
-        temp = self.n // self.p
-        while temp > 0:
-            self.res += temp % self.mod2
-            i += 1
-            temp = self.n // self.p**i
-        self.res %= self.mod2
+        for i in range(10):
+            self.res = (self.res + self.number_of_factor_p_in_factorial_n((self.sn[i] % self.p)*self.p**i)) % self.mod2
+        for i in range(10, self.q+1):
+            self.res = (self.res + self.number_of_factor_p_in_factorial_n((self.sn[i] % self.p)*self.p**10)) % self.mod2
 
     def solve(self):
         self.get_sn()
-        self.get_n()
         self.get_res()
         print(self.res)
 
