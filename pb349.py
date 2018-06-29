@@ -35,7 +35,8 @@ class Problem():
             nouvelle_direction = self.tourner_sens_aiguilles(self.orientation)
         else:
             nouvelle_direction = self.tourner_sens_contraire_aiguilles(self.orientation)
-        nouvelle_position = list(map(sum, zip(self.position, nouvelle_direction)))
+        nouvelle_position = list(map(sum, zip(self.position, nouvelle_direction)))  # additionne vectoriellement le
+        # vecteur position et le vecteur direction
         self.grille[self.position[0]][self.position[1]] = not couleur_position  # on inverse la couleur dans la case
         # initiale
         if couleur_position:
