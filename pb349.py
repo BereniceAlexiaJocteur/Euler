@@ -94,5 +94,6 @@ def main():
     u.solve()
     print('temps d execution', time.perf_counter() - start, 'sec')
 
+
 if __name__ == '__main__':
     sys.exit(main())
