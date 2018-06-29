@@ -6,7 +6,7 @@ class Problem():
 
     def __init__(self):
         self.orientation = (0, 1)  # (0,1) = haut (1,0) = droite (-1,0) = gauche (0,-1) = bas
-        self.position = (50, 50)  # position actuelle de la fourmi  sur la grille
+        self.position = [50, 50]  # position actuelle de la fourmi  sur la grille
         self.compteur_de_noirs = 0  # compte le nombres de cases noires sur la grille
         self.compteur_des_etapes = 0  # nombre d'étapes déjà effectuées
         self.grille = [[True for i in range(100)]for j in range(100)]  # grille sur laquelle évolue la fourmi True =
@@ -35,7 +35,7 @@ class Problem():
             nouvelle_direction = self.tourner_sens_aiguilles(self.orientation)
         else:
             nouvelle_direction = self.tourner_sens_contraire_aiguilles(self.orientation)
-        nouvelle_position = tuple(sum(x) for x in zip(self.position, nouvelle_direction))
+        nouvelle_position = list(map(sum, zip(self.position, nouvelle_direction)))
         self.grille[self.position[0]][self.position[1]] = not couleur_position  # on inverse la couleur dans la case
         # initiale
         if couleur_position:
