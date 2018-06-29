@@ -16,11 +16,13 @@ class Problem():
         # cours pour vérifier si le motif qui se répète est atteint
         self.compteur_meme_cycle = 0  # nombre de fois successives où le dernier cycle était identique à celui en cours
 
-    def tourner_sens_aiguilles(self, orientation_actuelle):  # fait tourner le vecteur orientation de 90° dans le sens
+    @staticmethod
+    def tourner_sens_aiguilles(orientation_actuelle):  # fait tourner le vecteur orientation de 90° dans le sens
         # des aiguilles d'une montre
         return -orientation_actuelle[1], orientation_actuelle[0]
 
-    def tourner_sens_contraire_aiguilles(self, orientation_actuelle):  # fait tourner le vecteur orientation de 90° dans
+    @staticmethod
+    def tourner_sens_contraire_aiguilles(orientation_actuelle):  # fait tourner le vecteur orientation de 90° dans
         #  le sens contraire des aiguilles d'une montre
         return orientation_actuelle[1], -orientation_actuelle[0]
 
