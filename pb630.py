@@ -40,7 +40,7 @@ class Problem():
                         if (x2, y2) not in liste:
                             liste.append((x2, y2))
                             liste[0] += 1
-                    if (x2, y2) not in liste:
+                    elif (x2, y2) not in liste:
                         liste.append((x2, y2))
                     self.slope_dictionnary[slope] = tuple(liste)
                 except KeyError:
