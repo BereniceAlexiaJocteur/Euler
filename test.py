@@ -1,3 +1,5 @@
 import itertools
 
-print(list(itertools.product(([1,2,3,4,5],['a', 'b'], [7,8,9,10,11]))))
+
+for i in itertools.combinations_with_replacement(range(1, 13), 20):
+    print(i)
