@@ -1,5 +1,4 @@
-import itertools
+import os
+import sys
 
-
-for i in itertools.combinations_with_replacement(range(1, 13), 20):
-    print(i)
+print(os.path.dirname(os.path.realpath(sys.argv[0])))
