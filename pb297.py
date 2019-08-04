@@ -22,7 +22,7 @@ class Problem():
 
     def get_sum(self, x):
         rank = 0
-        while self.fibo[rank+1]<=x:
+        while self.fibo[rank+1] <= x:
             rank += 1
         remain = x - self.fibo[rank]
         if remain == 0:
