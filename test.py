@@ -1,4 +1,11 @@
-import os
-import sys
+a=1
+b=2
 
-print(os.path.dirname(os.path.realpath(sys.argv[0])))
+a,b=b,a+b
+print(a,b)
+a,b=b,a+b
+print(a,b)
+a,b=b,a+b
+print(a,b)
+a,b=b,a+b
+print(a,b)
