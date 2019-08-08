@@ -25,8 +25,9 @@ class Problem():
         self.triangular_numbers_list_shift_plus = [i + 1 for i in self.triangular_numbers_list]
         self.triangular_numbers_list_shift_minus = [i - 1 for i in self.triangular_numbers_list]
 
-    def potential_primes(self):
-        ''' Make a generator for 2, 3, 5, & thence all numbers coprime to 30 '''
+    @staticmethod
+    def potential_primes():
+        # Make a generator for 2, 3, 5, & thence all numbers coprime to 30
         s = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
         for i in s:
             yield i
@@ -38,7 +39,7 @@ class Problem():
             j += 30
 
     def range_sieve(self, lo, hi):
-        ''' Create a list of all primes in the range(lo, hi) '''
+        # Create a list of all primes in the range(lo, hi)
         # Mark all numbers as prime
         primes = [True] * (hi - lo)
         # Eliminate 0 and 1, if necessary
@@ -78,7 +79,7 @@ class Problem():
                 if self.triangular_numbers_list[ind-1]-i in self.primes_set:
                     count += 1
                     value = self.triangular_numbers_list[ind-1]-i
-            for i in range(1,4):
+            for i in range(1, 4):
                 if self.triangular_numbers_list[ind+1]-i in self.primes_set:
                     count += 1
                     value = self.triangular_numbers_list[ind+1]-i
@@ -93,7 +94,7 @@ class Problem():
                     count += 1
                     value = self.triangular_numbers_list[ind+1]+i
         else:
-            min_val = min(filter(lambda i: i > x, self.triangular_numbers_list)) #plus petite valeure > x
+            min_val = min(filter(lambda j: j > x, self.triangular_numbers_list))  # plus petite valeur > x
             diff = min_val - x
             ind = self.triangular_numbers_list.index(min_val)
             for i in range(3):
@@ -113,9 +114,9 @@ class Problem():
 
     def s(self):
         curr_s = 0
-        min_val = min(filter(lambda i: i > self.triangular_numbers_list[2], self.primes_list))
+        min_val = min(filter(lambda k: k > self.triangular_numbers_list[2], self.primes_list))
         min_ind = self.primes_list.index(min_val)
-        max_val = max(filter(lambda i: i < self.triangular_numbers_list[3]+1, self.primes_list))
+        max_val = max(filter(lambda k: k < self.triangular_numbers_list[3]+1, self.primes_list))
         max_ind = self.primes_list.index(max_val)
         for j in range(min_ind, max_ind+1):
             i = self.primes_list[j]
