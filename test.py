@@ -1,11 +1,6 @@
-a=1
-b=2
+l=[1,3]
 
-a,b=b,a+b
-print(a,b)
-a,b=b,a+b
-print(a,b)
-a,b=b,a+b
-print(a,b)
-a,b=b,a+b
-print(a,b)
+u=set(l)
+
+print(l[1])
+print(u[1])
