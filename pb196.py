@@ -44,7 +44,7 @@ class Problem():
         # Eliminate 0 and 1, if necessary
         for i in range(lo, min(2, hi)):
             primes[i - lo] = False
-        ihi = int(hi ** 0.5)
+        ihi = int(math.sqrt(hi))
         for i in self.potential_primes():
             if i > ihi:
                 break
