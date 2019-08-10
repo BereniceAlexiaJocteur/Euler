@@ -1,6 +1,7 @@
-l=[1,3]
+import itertools
 
-u=set(l)
+u = list(itertools.permutations(range(3)))[2][0:2]
 
-print(l[1])
-print(u[1])
+for i in itertools.permutations(range(3)):
+    print(i)
+
