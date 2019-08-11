@@ -1,7 +1,4 @@
-import itertools
-
-u = list(itertools.permutations(range(3)))[2][0:2]
-
-for i in itertools.permutations(range(3)):
-    print(i)
+l = [(1,3),(2,1),(1,2),(2,3)]
+l.sort()
+print(l)
 
