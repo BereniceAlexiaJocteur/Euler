@@ -49,7 +49,6 @@ class Problem():
                 if count == 200:
                     self.res = i
                     break
-        print(count)
 
     def solve(self):
         self.init_primes()
