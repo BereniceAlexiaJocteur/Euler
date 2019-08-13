@@ -31,9 +31,7 @@ class Problem():
         string_n = str(n)
         string_test = str(n)
         if n % 2 == 0 or n % 5 == 0:
-            for i in range(1, 10):
-                if i == string_n[-1]:
-                    continue
+            for i in [1, 3, 7, 9]:
                 string_test = string_test[:-1] + str(i)
                 if primes.is_prime_opti(int(string_test)):
                     return False
