@@ -24,7 +24,9 @@ class Problem():
     def get_res(self):
         for i in self.dico:
             if primes.is_prime_opti(i):
-                self.res = (self.res + self.dico[i]) % 10**16
+                self.res = self.res + self.dico[i]
+                if self.res > 10**16:
+                    self.res = self.res % 10**16
 
     def solve(self):
         self.init_primes()
