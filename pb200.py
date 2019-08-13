@@ -9,15 +9,20 @@ class Problem():
         self.primes_list = None
         self.squbes_list = []
         self.res = 0
+        self.prime_max = 17*10**4
+        self.bound = 8*self.prime_max**2
 
     def init_primes(self):
-        self.primes_list = primes.sieve(2*10**5)
+        self.primes_list = primes.sieve(self.prime_max)
 
     def init_squbes_list(self):
-        for p in self.primes_list:
-            for q in self.primes_list:
+        for q in self.primes_list:
+            q3 = q**3
+            for p in self.primes_list:
                 if p != q:
-                    sqube = p**2*q**3
+                    sqube = p**2*q3
+                    if sqube > self.bound:
+                        break
                     if "200" in str(sqube):
                         self.squbes_list.append(sqube)
         self.squbes_list.sort()
@@ -25,21 +30,30 @@ class Problem():
     def is_prime_proof(self, n):
         string_n = str(n)
         string_test = str(n)
-        for i in range(1, 10):
-            if i == string_n[0]:
-                continue
-            string_test = string_test[:0] + str(i) + string_test[1:]
-            if primes.is_prime_opti(int(string_test)):
-                return False
-        for i in range(1, len(string_n)):
-            string_test = str(n)
-            for j in range(0, 10):
-                if j == string_n[i]:
+        if n % 2 == 0 or n % 5 == 0:
+            for i in range(1, 10):
+                if i == string_n[-1]:
                     continue
-                string_test = string_test[:i] + str(j) + string_test[i+1:]
+                string_test = string_test[:-1] + str(i)
                 if primes.is_prime_opti(int(string_test)):
                     return False
-        return True
+            return True
+        else:
+            for i in range(1, 10):
+                if i == string_n[0]:
+                    continue
+                string_test = string_test[:0] + str(i) + string_test[1:]
+                if primes.is_prime_opti(int(string_test)):
+                    return False
+            for i in range(1, len(string_n)):
+                string_test = str(n)
+                for j in range(0, 10):
+                    if j == string_n[i]:
+                        continue
+                    string_test = string_test[:i] + str(j) + string_test[i+1:]
+                    if primes.is_prime_opti(int(string_test)):
+                        return False
+            return True
 
     def get_res(self):
         count = 0
