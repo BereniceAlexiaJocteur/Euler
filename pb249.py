@@ -9,10 +9,14 @@ class Problem():
     def __init__(self):
         self.dico = {0: 1}
         self.primes_list = None
+        self.big_primes_list = None
         self.res = 0
 
     def init_primes(self):
         self.primes_list = primes.sieve(5000)
+
+    def init_big_primes(self):
+        self.big_primes_list = set(primes.sieve_seg(sum(self.primes_list)))
 
     def init_dico(self):
         for p in self.primes_list:
@@ -23,13 +27,14 @@ class Problem():
 
     def get_res(self):
         for i in self.dico:
-            if primes.is_prime_opti(i):
+            if i in self.big_primes_list:
                 self.res = self.res + self.dico[i]
                 if self.res > 10**16:
                     self.res = self.res % 10**16
 
     def solve(self):
         self.init_primes()
+        self.init_big_primes()
         self.init_dico()
         self.get_res()
         print(self.res)
