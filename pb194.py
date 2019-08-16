@@ -17,16 +17,17 @@ class Problem():
 
     def init_base_cases(self):
         for i in range(3, 8):
-            digits = list(range(1, i+1))
+            digits = list(range(1, i + 1))
             set_digits = set(digits)
             l = [digits] * 7
             count_a = 0
             count_b = 0
             for k in itertools.product(*l):
-                if k[5]==1 and k[6]==2 and set(k)==set(set_digits):
-                    if k[0]!=1 and k[0]!=k[3] and k[0]!=k[1] and k[1]!=k[2] and k[2]!=2 and k[2]!=k[4] and k[3]!=1 and k[3]!=k[4]:
+                if k[5] == 1 and k[6] == 2 and set(k) == set(set_digits):
+                    if k[0] != 1 and k[0] != k[3] and k[0] != k[1] and k[1] != k[2] and k[2] != 2 and k[2] != k[4] and \
+                            k[3] != 1 and k[3] != k[4]:
                         count_b += 1
-                        if k[4]!=2:
+                        if k[4] != 2:
                             count_a += 1
             self.a_base_case.append(count_a)
             self.b_base_case.append(count_b)
@@ -44,7 +45,8 @@ class Problem():
         number_ways_a = sum([x * y for x, y in zip(*lists_a)])
         lists_b = self.b_base_case, choose_list
         number_ways_b = sum([x * y for x, y in zip(*lists_b)])
-        self.res = (self.c*(self.c-1)*number_ways_a**self.a*number_ways_b**self.b*self.choose(self.a+self.b, self.a))%10**8
+        self.res = (self.c * (self.c - 1) * number_ways_a ** self.a * number_ways_b ** self.b * self.choose(
+            self.a + self.b, self.a)) % 10 ** 8
 
     def solve(self):
         self.init_base_cases()
