@@ -22,7 +22,7 @@ class Problem():
 
     def get_res(self):
         initial_guess = [self.d+self.w*i for i in range(6)]
-        result = scipy.optimize.minimize(self.function_to_minimize, initial_guess, tol=1/10**11)
+        result = scipy.optimize.minimize(self.function_to_minimize, initial_guess, tol=10**-10)
         if result.success:
             fitted_params = result.x
             self.res = round(self.function_to_minimize(fitted_params), 10)
